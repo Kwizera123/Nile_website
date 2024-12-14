@@ -2,7 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\Admincontroller;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -21,6 +21,11 @@ Route::get('/', function () {
 Route::get('/dashboard', function () {
     return view('admin.index');
 })->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::controller(Admincontroller::class)->group(function(){
+    Route::get('/admin/logout','destroy')->name('admin.logout');
+    Route::get('/admin/profile','Profile')->name('admin.profile');
+});
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
