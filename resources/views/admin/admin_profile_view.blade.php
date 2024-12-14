@@ -9,7 +9,9 @@
     <div class="col-lg-6">
       <div class="card"><br/>
         <center>
-          <img class="rounded-circle avatar-xl" src="{{ asset('backend/assets/images/small/img-5.jpg')}}" alt="Profile Image"></center>
+          <img class="rounded-circle avatar-xl" src="{{ asset('backend/assets/images/small/img-5.jpg')}}" alt="Profile Image">
+        </center>
+
           <div class="card-body">
               <h4 class="card-title">Name : {{ $adminData->name}}</h4><hr>
               <h4 class="card-text">Email : {{ $adminData->email}}</h4><hr>
@@ -17,7 +19,7 @@
               <p class="card-text">
                   <small class="text-muted">Last Updated : {{ $adminData->updated_at }}</small>
               </p><hr>
-              <a href="" class="btn btn-info btn-rounded waves-effect waves-light">Edit Profile</a>
+              <a href="{{ route('edit.profile')}}" class="btn btn-info btn-rounded waves-effect waves-light">Edit Profile</a>
           </div>
       </div>
   </div>
