@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('title')->nullable();
             $table->string('short_title')->nullable();
             $table->string('home_slide')->nullable();
+            $table->string('explore')->nullable();
             $table->timestamps();
         });
     }

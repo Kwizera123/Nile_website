@@ -3,9 +3,10 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admincontroller;
+use App\Http\Controllers\Home\HomeSliderController;
 /*
 |--------------------------------------------------------------------------
-| Web Routes
+| Web Routes 
 |--------------------------------------------------------------------------
 |
 | Here is where you can register web routes for your application. These
@@ -31,6 +32,17 @@ Route::controller(Admincontroller::class)->group(function(){
     Route::get('/change/password','ChangePassword')->name('change.password');
     Route::post('/updatee/password','UpdatePassword')->name('update.password');
 });
+
+// Home Slide Controller
+Route::controller(HomeSliderController::class)->group(function(){
+    Route::get('/home/slide','HomeSlide')->name('home.slide');
+    Route::post('/update/slider','UpdateSlider')->name('update.slider');
+});
+
+
+
+
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
