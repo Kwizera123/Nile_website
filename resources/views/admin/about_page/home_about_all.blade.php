@@ -14,7 +14,7 @@
 
                   <h4 class="card-title">Edit About Page</h4>
 
-                <Form method="post" action="{{ route('update.slider') }}" enctype="multipart/form-data">
+                <Form method="post" action="{{ route('update.about.page') }}" enctype="multipart/form-data">
                   @csrf
 
                   <input type="hidden" name="id" value="{{ $aboutpage->id }}">
@@ -43,32 +43,32 @@
 </div>
 <!-- end row -->
 
-<div class="row mb-3">
+{{-- <div class="row mb-3">
   <label for="example-text-input" class="col-sm-2 col-form-label">About Icon </label>
   <div class="col-sm-10">
       <input name="small_image" class="form-control" id="image" type="file">
   </div>
-</div>
+</div> --}}
 <!-- end row -->
-<div class="row mb-3">
+{{-- <div class="row mb-3">
   <label for="example-text-input" class="col-sm-2 col-form-label"></label>
   <div class="col-sm-10"> 
     <img id="showImage" class="rounded avatar-lg"" src="{{ (!empty($aboutpage->small_image))? url($aboutpage->small_image):url('upload/no_image.jpg') }}" alt="About Icon" weight>
   </div>
-</div>
+</div> --}}
     <!-- end row -->
     <div class="row mb-3">
       <label for="example-text-input" class="col-sm-2 col-form-label">Small Title</label>
       <div class="col-sm-10">
-          <input name="small_title" class="form-control" id="small_title" type="text" placeholder="small_title" value="{{ $aboutpage->small_title }}" id="example-text-input">
+          <input name="small_title" class="form-control" id="small_title" type="text" placeholder="Small Title" value="{{ $aboutpage->small_title }}" id="example-text-input">
       </div>
   </div>
     <!-- end row -->
 
     <div class="row mb-3">
-      <label for="example-text-input" class="col-sm-2 col-form-label">Small Title</label>
+      <label for="example-text-input" class="col-sm-2 col-form-label">Details</label>
       <div class="col-sm-10">
-          <input name="details" class="form-control" id="details" type="text" placeholder="details" value="{{ $aboutpage->details }}" id="example-text-input">
+          <input name="details" class="form-control" id="details" type="text" placeholder="Details" value="{{ $aboutpage->details }}" id="example-text-input">
       </div>
   </div>
     <!-- end row -->
@@ -79,14 +79,14 @@
     <div class="row mb-3">
       <label for="example-text-input" class="col-sm-2 col-form-label">About Image </label>
       <div class="col-sm-10">
-          <input name="about_image" class="form-control" id="image" type="file">
+          <input name="about_image" class="form-control" id="abimage" type="file">
       </div>
   </div>
     <!-- end row -->
     <div class="row mb-3">
       <label for="example-text-input" class="col-sm-2 col-form-label"></label>
       <div class="col-sm-10"> 
-        <img id="showImage" class="rounded avatar-lg"" src="{{ (!empty($aboutpage->about_image))? url($aboutpage->about_image):url('upload/no_image.jpg') }}" alt="About Image" weight>
+        <img id="aboutImage" class="rounded avatar-lg"" src="{{ (!empty($aboutpage->about_image))? url($aboutpage->about_image):url('upload/no_image.jpg') }}" alt="About Image" weight>
       </div>
   </div>
 
@@ -112,6 +112,19 @@
       var reader = new FileReader();
       reader.onload = function(e){
         $('#showImage').attr('src',e.target.result);
+      }
+      reader.readAsDataURL(e.target.files['0']);
+    });
+  });
+</script>
+
+<script type="text/javascript">
+
+  $(document).ready(function(){
+    $('#abimage').change(function(e){
+      var reader = new FileReader();
+      reader.onload = function(e){
+        $('#aboutImage').attr('src',e.target.result);
       }
       reader.readAsDataURL(e.target.files['0']);
     });
