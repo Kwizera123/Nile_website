@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admincontroller;
 use App\Http\Controllers\Home\HomeSliderController;
 use App\Http\Controllers\Home\AboutController;
+use App\Http\Controllers\Home\ProductController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes 
@@ -45,6 +46,11 @@ Route::controller(AboutController::class)->group(function(){
     Route::get('/about/page','AboutPage')->name('about.page');
     Route::post('/update/about','UpdateAbout')->name('update.about.page');
     Route::get('/about','HomeAbout')->name('home.about');
+});
+
+Route::controller(ProductController::class)->group(function(){
+    Route::get('/product','ProductPage')->name('product.page');
+    
 });
 
 
