@@ -13,7 +13,8 @@ use Illuminate\Validation\Validator;
 class ProductController extends Controller
 {
     public function AllProduct(){
-        //
+        $product = Product::latest()->get();
+        return view('admin.prodact_page.all_products',compact('product'));
     }//
     public function ProductPage(){
         return view('admin.prodact_page.product');
