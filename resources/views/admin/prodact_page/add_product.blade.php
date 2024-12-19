@@ -12,7 +12,7 @@
           <div class="card">
               <div class="card-body">
 
-                  <h4 class="card-title">Edit Product Page</h4>
+                  <h4 class="card-title">Add New Product</h4>
 
                 <Form method="post" action="{{ route('store.product') }}" enctype="multipart/form-data">
                   @csrf
@@ -21,7 +21,7 @@
                   <div class="row mb-3">
                       <label for="example-text-input" class="col-sm-2 col-form-label">Title</label>
                       <div class="col-sm-10">
-                          <input name="title" class="form-control" id="title" type="text" placeholder="title" value=" " id="example-text-input">
+                          <input name="title" class="form-control" id="title" type="text" placeholder="Title" id="title-text-input">
                       </div>
                   </div>
 <!-- end row -->
@@ -31,7 +31,7 @@
   <div class="row mb-3">
     <label for="example-text-input" class="col-sm-2 col-form-label">Description</label>
     <div class="col-sm-10">
-        <textarea name="description" required="" class="form-control" rows="5"></textarea>
+        <textarea name="description" placeholder="Description" class="form-control" rows="5"></textarea>
     </div>
 </div>
 <!-- end row -->
@@ -58,7 +58,7 @@
     <div class="row mb-3">
       <label for="example-text-input" class="col-sm-2 col-form-label"></label>
       <div class="col-sm-10"> 
-        <img id="showImage" class="rounded avatar-lg"" src="" alt="Product Image" weight>
+        <img id="showImage" class="rounded avatar-lg"" src="{{url('upload/no_image.jpg') }}" alt="Product Image" weight>
       </div>
   </div>
 

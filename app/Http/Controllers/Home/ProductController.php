@@ -16,8 +16,8 @@ class ProductController extends Controller
         $product = Product::latest()->get();
         return view('admin.prodact_page.all_products',compact('product'));
     }//
-    public function ProductPage(){
-        return view('admin.prodact_page.product');
+    public function AddProduct(){
+        return view('admin.prodact_page.add_product');
     }// End Metho
 
     public function StoreProduct(Request $request){

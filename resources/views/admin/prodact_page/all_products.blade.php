@@ -13,7 +13,7 @@
 
                 <h4 class="card-title">Products</h4>
                 <p class="card-title-desc">
-                   <button type="button" class="btn btn-outline-primary waves-effect waves-light">Add Product</button>
+                   <a href="{{ route('add.product') }}" class="btn btn-outline-primary waves-effect waves-light">Add Product</a>
                 </p>
 
                 <table id="selection-datatable" class="table dt-responsive nowrap w-100">
