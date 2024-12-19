@@ -19,7 +19,7 @@
                 <table id="selection-datatable" class="table dt-responsive nowrap w-100">
                     <thead>
                         <tr>
-                            <th>Sl</th>
+                            <th">Sl</th>
                             <th>Title</th>
                             <th>Descreption</th>
                             <th>Link</th>
@@ -34,11 +34,11 @@
                         
                       
                         <tr>
-                            <td>{{ $key+1 }}</td>
-                            <td>{{ $item->title }}</td>
+                            <td width="5px;">{{ $key+1 }}</td>
+                            <td width="10px;">{{ $item->title }}</td>
                             <td>{{ $item->description }}</td>
                             <td>{{ $item->link }}</td>
-                            <td><img src="{{ asset($item->image) }}" alt="Image" style="width:70px; height:40px"></td>
+                            <td><img src="{{ asset($item->image) }}" alt="Image" style="width:30px; height:30px"></td>
                             <td>
                               <a href="" class="btn btn-warning px-3 radius-30">Edit</a>
                               <a href="" class="btn btn-danger px-3 radius-30">Delete</a>
