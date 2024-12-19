@@ -48,15 +48,17 @@ Route::controller(AboutController::class)->group(function(){
     Route::get('/about','HomeAbout')->name('home.about');
 });
 
-Route::controller(ProductController::class)->group(function(){
-    Route::get('/product','ProductPage')->name('product.page');
-    
+
+
+Route::middleware('auth')->group(function () {
+
+    Route::controller(ProductController::class)->group(function(){
+        Route::get('/all/product','AllProduct')->name('all.product');
+        Route::get('/product','ProductPage')->name('product.page');
+        Route::post('/store/product','StoreProduct')->name('store.product');
+    });
+
 });
-
-
-
-
-
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

@@ -14,10 +14,10 @@
 
                   <h4 class="card-title">Edit Product Page</h4>
 
-                <Form method="post" action="{{ route('update.about.page') }}" enctype="multipart/form-data">
+                <Form method="post" action="{{ route('store.product') }}" enctype="multipart/form-data">
                   @csrf
 
-                  <input type="hidden" name="id" value="">
+                  {{-- <input type="hidden" name="id" value=""> --}}
                   <div class="row mb-3">
                       <label for="example-text-input" class="col-sm-2 col-form-label">Title</label>
                       <div class="col-sm-10">
@@ -58,11 +58,12 @@
     <div class="row mb-3">
       <label for="example-text-input" class="col-sm-2 col-form-label"></label>
       <div class="col-sm-10"> 
-        <img id="showImage" class="rounded avatar-lg"" src="{{ (!empty($aboutpage->image))? url($aboutpage->image):url('upload/no_image.jpg') }}" alt="Product Image" weight>
+        <img id="showImage" class="rounded avatar-lg"" src="" alt="Product Image" weight>
       </div>
   </div>
 
-  <input class="btn btn-info waves-effect waves-light" type="submit" value="Update Product Page">
+
+  <input class="btn btn-info waves-effect waves-light" type="submit" value="Save Product">
 </Form>
 
 

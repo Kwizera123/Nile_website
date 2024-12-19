@@ -60,11 +60,12 @@
               <li>
                 <a href="javascript: void(0);" class="has-arrow waves-effect">
                     <i class="ri-layout-3-line"></i>
-                    <span>Product Setup</span>
+                    <span>Manage Product</span>
                 </a>
                 <ul class="sub-menu" aria-expanded="false">
                     <li>
-                        <a href="{{ route('product.page') }}">Product page</a> 
+                        <a href="{{ route('all.product') }}">All Products</a> 
+                        <a href="{{ route('product.page') }}">Add Product</a> 
                     </li>
                 </ul>
             </li>
