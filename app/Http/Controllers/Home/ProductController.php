@@ -102,4 +102,20 @@ class ProductController extends Controller
          }// End If else
     }// End Method
 
+    public function DeleteProduct($id){
+
+        $item = Product::findOrFail($id);
+        $img = $item->image;
+        unlink($img);
+
+        Product::findOrFail($id)->delete();
+
+        $notification = array(
+            'message' => 'Product Deleted Successfully',
+            'alert-type' => 'error'
+        );
+    
+        return redirect()->back()->with($notification);
+    }// End Method
+
 }

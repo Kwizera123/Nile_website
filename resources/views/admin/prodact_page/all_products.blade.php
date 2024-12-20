@@ -19,7 +19,7 @@
                 <table id="selection-datatable" class="table dt-responsive nowrap w-100">
                     <thead>
                         <tr>
-                            <th">Sl</th>
+                            <th>Sl</th>
                             <th>Title</th>
                             <th>Descreption</th>
                             <th>Link</th>
@@ -41,7 +41,7 @@
                             <td><img src="{{ asset($item->image) }}" alt="Image" style="width:30px; height:30px"></td>
                             <td>
                               <a href="{{ route('edit.product',$item->id)}}" class="btn btn-warning px-3 radius-30">Edit</a>
-                              <a href="" class="btn btn-danger px-3 radius-30">Delete</a>
+                              <a href="{{ route('delete.product',$item->id)}}" class="btn btn-danger px-3 radius-30">Delete</a>
                             </td>
                         </tr>
                         @endforeach
