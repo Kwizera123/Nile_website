@@ -14,13 +14,13 @@
 
                   <h4 class="card-title">Add New Product</h4>
 
-                <Form method="post" action="{{ route('store.product') }}" enctype="multipart/form-data">
+                <Form id="myForm" method="post" action="{{ route('store.product') }}" enctype="multipart/form-data">
                   @csrf
 
                   {{-- <input type="hidden" name="id" value=""> --}}
                   <div class="row mb-3">
-                      <label for="example-text-input" class="col-sm-2 col-form-label">Title</label>
-                      <div class="col-sm-10">
+                      <label for="example-text-input" class="col-sm-2 col-form-label">Product Title</label>
+                      <div class="form-group col-sm-10">
                           <input name="title" class="form-control" id="title" type="text" placeholder="Title" id="title-text-input">
                       </div>
                   </div>
@@ -29,8 +29,8 @@
 
 
   <div class="row mb-3">
-    <label for="example-text-input" class="col-sm-2 col-form-label">Description</label>
-    <div class="col-sm-10">
+    <label for="example-text-input" class="col-sm-2 col-form-label">Product Description</label>
+    <div class="form-group col-sm-10">
         <textarea name="description" placeholder="Description" class="form-control" rows="5"></textarea>
     </div>
 </div>
@@ -38,8 +38,8 @@
 
 
     <div class="row mb-3">
-      <label for="example-text-input" class="col-sm-2 col-form-label">Link</label>
-      <div class="col-sm-10">
+      <label for="example-text-input" class="col-sm-2 col-form-label">Page Link</label>
+      <div class="form-group col-sm-10">
           <input name="link" class="form-control" id="details" type="text" placeholder="Link" value="" id="example-text-input">
       </div>
   </div>
@@ -50,7 +50,7 @@
 
     <div class="row mb-3">
       <label for="example-text-input" class="col-sm-2 col-form-label">Product Image </label>
-      <div class="col-sm-10">
+      <div class="form-group col-sm-10">
           <input name="image" class="form-control" id="image" type="file">
       </div>
   </div>
@@ -75,6 +75,58 @@
 
   </div>
 </div>
+
+
+
+<script type="text/javascript">
+  $(document).ready(function (){
+      $('#myForm').validate({
+          rules: {
+              title: {
+                  required : true,
+              }, 
+              description: {
+                  required : true,
+              }, 
+              link: {
+                  required : true,
+              }, 
+              image: {
+                  required : true,
+              }, 
+              
+          },
+          messages :{
+                title: {
+                  required : 'Please Enter Product Title',
+              }, 
+              description: {
+                  required : 'Please Enter Product Description',
+              }, 
+              link: {
+                  required : 'Please Enter Product Page Link (Url)',
+              },
+              image: {
+                  required : 'Please Select Product Image',
+              },
+               
+
+          },
+          errorElement : 'span', 
+          errorPlacement: function (error,element) {
+              error.addClass('invalid-feedback');
+              element.closest('.form-group').append(error);
+          },
+          highlight : function(element, errorClass, validClass){
+              $(element).addClass('is-invalid');
+          },
+          unhighlight : function(element, errorClass, validClass){
+              $(element).removeClass('is-invalid');
+          },
+      });
+  });
+  
+</script>
 
 
 
