@@ -40,7 +40,7 @@
                             <td>{{ $item->link }}</td>
                             <td><img src="{{ asset($item->image) }}" alt="Image" style="width:30px; height:30px"></td>
                             <td>
-                              <a href="" class="btn btn-warning px-3 radius-30">Edit</a>
+                              <a href="{{ route('edit.product',$item->id)}}" class="btn btn-warning px-3 radius-30">Edit</a>
                               <a href="" class="btn btn-danger px-3 radius-30">Delete</a>
                             </td>
                         </tr>

@@ -47,4 +47,59 @@ class ProductController extends Controller
 
     return redirect()->route('all.product')->with($notification);
     }// End Method
+
+    public function EditProduct($id){
+        $product = Product::findOrFail($id);
+        return view('admin.prodact_page.edit_product',compact('product'));
+    }//End Method
+
+    public function UpdateProduct(Request $request){
+    $product_id = $request->id;
+
+    if($request->file('image')){
+
+        $image = $request->file('image');
+        $manager = new ImageManager(new Driver());
+        $name_gen = hexdec(uniqid()).'.'.$request->file('image')->getClientOriginalExtension();
+        $img = $manager->read($request->file('image'));
+        $img = $img->resize(300,300);
+  
+        $img->toJpeg(80)->save(base_path('public/upload/product_page/'.$name_gen));
+        $save_url = 'upload/product_page/'.$name_gen;
+  
+  
+        Product::findOrFail($product_id)->update([
+        'title' => $request->title,
+        'description' => $request->description,
+        'link' => $request->link,
+        'image' => $save_url,
+        'created_at' => Carbon::now(),
+        ]);
+  
+        $notification = array(
+          'message' => 'Product Updated With Image Successfully',
+          'alert-type' => 'success'
+      );
+  
+      return redirect()->route('all.product')->with($notification);
+
+    }else{
+
+        Product::findOrFail($product_id)->update([
+            'title' => $request->title,
+            'description' => $request->description,
+            'link' => $request->link,
+            'created_at' => Carbon::now(),
+            ]);
+      
+            $notification = array(
+              'message' => 'Product Updated Without Image Successfully',
+              'alert-type' => 'info'
+          );
+      
+          return redirect()->route('all.product')->with($notification);
+
+         }// End If else
+    }// End Method
+
 }
