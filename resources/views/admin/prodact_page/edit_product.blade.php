@@ -64,6 +64,7 @@
 
 
   <input class="btn btn-info waves-effect waves-light" type="submit" value="Update Product">
+  <a href="{{ route('all.product') }}" class="btn btn-outline-danger waves-effect waves-light">Cancel</a>
 </Form>
 
 
