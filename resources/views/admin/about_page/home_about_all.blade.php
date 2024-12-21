@@ -66,6 +66,14 @@
     <!-- end row -->
 
     <div class="row mb-3">
+      <label for="example-text-input" class="col-sm-2 col-form-label">Award</label>
+      <div class="col-sm-10">
+          <input name="award" class="form-control" id="small_title" type="text" placeholder="Award" value="{{ $aboutpage->award }}" id="example-text-input">
+      </div>
+  </div>
+    <!-- end row -->
+
+    <div class="row mb-3">
       <label for="example-text-input" class="col-sm-2 col-form-label">Details</label>
       <div class="col-sm-10">
           <input name="details" class="form-control" id="details" type="text" placeholder="Details" value="{{ $aboutpage->details }}" id="example-text-input">
@@ -91,6 +99,7 @@
   </div>
 
   <input class="btn btn-info waves-effect waves-light" type="submit" value="Update About Page">
+  <a href="{{ route('add.about') }}" class="btn btn-outline-danger waves-effect waves-light">Cancel </a>
 </Form>
 
 

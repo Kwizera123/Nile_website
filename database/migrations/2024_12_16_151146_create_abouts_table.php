@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('small_image')->nullable();
             $table->string('small_title')->nullable();
             $table->text('details')->nullable();
+            $table->string('award')->nullable();
             $table->string('about_image')->nullable();
             $table->timestamps();
         });

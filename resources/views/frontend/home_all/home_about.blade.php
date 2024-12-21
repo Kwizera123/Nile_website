@@ -1,6 +1,7 @@
 @php
- 
+
   $aboutpage = App\Models\About::find(1);
+  
 
 @endphp
 
@@ -19,16 +20,17 @@
               </div>
               <p class="mb-4">{{ $aboutpage->description }}</p>
               <div class="row gx-5 gy-4">
+                
                   <div class="col-sm-6">
                       <i class="fa fa-seedling display-1 text-secondary"></i>
                       <h4>{{ $aboutpage->small_title }}</h4>
                       <p class="mb-0">{{ $aboutpage->details }}</p>
                   </div>
-                  <div class="col-sm-6">
+                   <div class="col-sm-6">
                       <i class="fa fa-award display-1 text-secondary"></i>
-                      <h4>Award Winning</h4>
+                      <h4>{{ $aboutpage->award }}</h4>
                       <p class="mb-0">Labore justo vero ipsum sit clita erat lorem magna clita nonumy dolor magna dolor vero</p>
-                  </div>
+                  </div> 
               </div>
           </div>
       </div>

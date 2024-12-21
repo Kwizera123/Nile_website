@@ -12,7 +12,7 @@
           <div class="card">
               <div class="card-body">
 
-                  <h4 class="card-title">Add New Product</h4>
+                  <h4 class="card-title">Create New Product</h4>
 
                 <Form id="myForm" method="post" action="{{ route('store.product') }}" enctype="multipart/form-data">
                   @csrf
@@ -63,7 +63,7 @@
   </div>
 
 
-  <input class="btn btn-info waves-effect waves-light" type="submit" value="Save Product">
+  <input class="btn btn-primary waves-effect waves-light" type="submit" value="Publish Product">
 </Form>
 
 

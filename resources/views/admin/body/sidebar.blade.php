@@ -52,7 +52,8 @@
                   </a>
                   <ul class="sub-menu" aria-expanded="false">
                       <li>
-                          <a href="{{ route('about.page') }}">About Page</a> 
+                          <a href="{{ route('all.about') }}">All About Page</a>                         
+                          <a href="{{ route('add.about') }}">New About Us<span class="text text-danger">Only if doesn't exist</span>.</a> 
                       </li>
                   </ul>
               </li>

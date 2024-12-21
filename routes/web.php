@@ -41,10 +41,14 @@ Route::controller(HomeSliderController::class)->group(function(){
     Route::post('/update/slider','UpdateSlider')->name('update.slider');
 });
 
-// Home About Controller 
+// Home About Controller  
 Route::controller(AboutController::class)->group(function(){
-    Route::get('/about/page','AboutPage')->name('about.page');
+    Route::get('/all/about','AllAbout')->name('all.about');
+    Route::get('/add/about','AddAbout')->name('add.about');
+    Route::post('/store/about','StoreAbout')->name('store.about');
+    Route::get('/about/edit/{id}','EditAbout')->name('about.page');
     Route::post('/update/about','UpdateAbout')->name('update.about.page');
+    Route::get('/delete/about/{id}','DeleteAbout')->name('delete.about');
     Route::get('/about','HomeAbout')->name('home.about');
 });
 
