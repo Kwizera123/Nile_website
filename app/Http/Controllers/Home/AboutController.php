@@ -39,6 +39,7 @@ class AboutController extends Controller
         'description' => $request->description,
         'small_title' => $request->small_title,
         'award' => $request->award,
+        'award_desc' => $request->award_desc,
         'details' => $request->details,
         'about_image' => $save_url,
         'created_at' => Carbon::now(),
@@ -56,6 +57,7 @@ class AboutController extends Controller
         'description' => $request->description,
         'small_title' => $request->small_title,
         'award' => $request->award,
+        'award_desc' => $request->award_desc,
         'details' => $request->details,
         
     ]);
@@ -98,6 +100,7 @@ class AboutController extends Controller
                 'description' => $request->description,
                 'small_title' => $request->small_title,
                 'award' => $request->award,
+                'award_desc' => $request->award_desc,
                 'details' => $request->details,
                 'about_image' => $save_url,
             ]);
@@ -117,6 +120,7 @@ class AboutController extends Controller
                 'description' => $request->description,
                 'small_title' => $request->small_title,
                 'award' => $request->award,
+                'award_desc' => $request->award_desc,
                 'details' => $request->details,
                 
             ]);

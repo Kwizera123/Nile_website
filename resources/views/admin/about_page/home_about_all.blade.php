@@ -68,7 +68,15 @@
     <div class="row mb-3">
       <label for="example-text-input" class="col-sm-2 col-form-label">Award</label>
       <div class="col-sm-10">
-          <input name="award" class="form-control" id="small_title" type="text" placeholder="Award" value="{{ $aboutpage->award }}" id="example-text-input">
+          <input name="award" class="form-control" id="award" type="text" placeholder="Award" value="{{ $aboutpage->award }}" id="example-text-input">
+      </div>
+  </div>
+    <!-- end row -->
+
+    <div class="row mb-3">
+      <label for="example-text-input" class="col-sm-2 col-form-label">Award Detail</label>
+      <div class="col-sm-10">
+          <input name="award_desc" class="form-control" id="award_desc" type="text" placeholder="Award Detail" value="{{ $aboutpage->award_desc }}" id="example-text-input">
       </div>
   </div>
     <!-- end row -->

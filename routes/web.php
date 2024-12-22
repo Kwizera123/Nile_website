@@ -35,10 +35,14 @@ Route::controller(Admincontroller::class)->group(function(){
     Route::post('/updatee/password','UpdatePassword')->name('update.password');
 });
 
-// Home Slide Controller
+// Home Slide Controller 
 Route::controller(HomeSliderController::class)->group(function(){
+    Route::get('/allhome/slide','AllhomeSlide')->name('all.home.slide');
+    Route::get('/addhome/slide','AddhomeSlide')->name('add.home.slide');
+    Route::post('/store/home/slide','StoreHomeSlider')->name('store.home.slide');
     Route::get('/home/slide','HomeSlide')->name('home.slide');
     Route::post('/update/slider','UpdateSlider')->name('update.slider');
+    
 });
 
 // Home About Controller  

@@ -74,6 +74,14 @@
     <!-- end row -->
 
     <div class="row mb-3">
+      <label for="example-text-input" class="col-sm-2 col-form-label">Award Desc</label>
+      <div class="form-group col-sm-10">
+          <input name="award_desc" class="form-control" id="award_desc" type="text" placeholder="Award Descreption"  id="example-text-input">
+      </div>
+  </div>
+    <!-- end row -->
+
+    <div class="row mb-3">
       <label for="example-text-input" class="col-sm-2 col-form-label">Details</label>
       <div class="form-group col-sm-10">
           <input name="details" class="form-control" id="details" type="text" placeholder="Details"  id="example-text-input">
@@ -128,6 +136,9 @@
               details: {
                   required : true,
               },
+              details: {
+                  required : true,
+              },
               
           },
           messages :{
@@ -141,6 +152,9 @@
                   required : 'Please Enter Product Page Link (Url)',
               },
               small_title: {
+                  required : 'Please Select Product Image',
+              },
+              details: {
                   required : 'Please Select Product Image',
               },
               details: {

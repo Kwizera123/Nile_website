@@ -23,6 +23,7 @@
                             <th>Descreption</th>
                             <th>Small Title</th>
                             <th>Award</th>
+                            <th>Award</th>
                             <th>Details</th>
                             <th>Image</th>
                             <th>Action</th>
@@ -41,6 +42,7 @@
                             <td>{{ $item->description }}</td>
                             <td>{{ $item->small_title }}</td>
                             <td>{{ $item->award }}</td>
+                            <td>{{ $item->award_desc }}</td>
                             <td>{{ $item->details }}</td>
                             <td><img src="{{ (!empty($item->about_image))? url($item->about_image):url('upload/no_image.jpg') }}" alt="Image" style="width:30px; height:30px"></td>
                             <td>

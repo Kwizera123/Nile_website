@@ -37,9 +37,10 @@
               <li>
                   <a href="javascript: void(0);" class="has-arrow waves-effect">
                       <i class="ri-mail-send-line"></i>
-                      <span>Home Slide Setup</span>
+                      <span>Manage Home Slide</span>
                   </a>
                   <ul class="sub-menu" aria-expanded="false">
+                    <li><a href="{{ route('all.home.slide') }}">Home Slide Data</a></li>
                       <li><a href="{{ route('home.slide') }}">Home Slide Data</a></li>
                       
                   </ul>

@@ -29,7 +29,7 @@
                    <div class="col-sm-6">
                       <i class="fa fa-award display-1 text-secondary"></i>
                       <h4>{{ $aboutpage->award }}</h4>
-                      <p class="mb-0">Labore justo vero ipsum sit clita erat lorem magna clita nonumy dolor magna dolor vero</p>
+                      <p class="mb-0">{{ $aboutpage->award_desc }}</p>
                   </div> 
               </div>
           </div>
