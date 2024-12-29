@@ -49,12 +49,14 @@ class HomeSliderController extends Controller
 
         //
     }// End Method
-    public function HomeSlide(){
-        $homeslide = HomeSlide::find(1);
-        return view('admin.home_slide.home_slide_all',compact('homeslide'));
+
+    public function EditHomeSlide($id){
+        $homeslide = HomeSlide::findOrFail($id);
+        return view('admin.home_slide.edit_home_slide',compact('homeslide'));
     }// End Method
 
-    public function UpdateSlider(Request $request){
+
+    public function UpdateSlide(Request $request){
         $slide_id = $request->id;
 
         if($request->file('home_slide')){
@@ -98,4 +100,22 @@ class HomeSliderController extends Controller
         }// End Else
 
     }// End Method
+
+
+    public function DeleteHomeSlide($id){
+       
+        $item = HomeSlide::findOrFail($id);
+        
+        $img = $item->home_slide;
+        unlink($img);
+
+        HomeSlide::findOrFail($id)->delete();
+
+        $notification = array(
+            'message' => 'Home Slide Deleted Successfully',
+            'alert-type' => 'error'
+        );
+    
+        return redirect()->back()->with($notification);
+        }// End Method
 }

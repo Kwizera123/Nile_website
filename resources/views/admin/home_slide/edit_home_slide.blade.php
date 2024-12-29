@@ -36,7 +36,7 @@
     <div class="row mb-3">
       <label for="example-text-input" class="col-sm-2 col-form-label">Explore</label>
       <div class="col-sm-10">
-          <input name="explore" class="form-control" id="explore" type="text" placeholder="home_slide" value="{{ $homeslide->explore }}" id="example-text-input">
+          <input name="explore" class="form-control" id="explore" type="text" placeholder="" value="{{ $homeslide->explore }}" id="example-text-input">
       </div>
   </div>
     <!-- end row -->
@@ -51,7 +51,7 @@
     <div class="row mb-3">
       <label for="example-text-input" class="col-sm-2 col-form-label"></label>
       <div class="col-sm-10"> 
-        <img id="showImage" class="rounded avatar-lg"" src="{{ (!empty($homeslide->home_slide))? url($homeslide->home_slide):url('upload/no_image.jpg') }}" alt="Slide Image" weight>
+        <img id="showImage" class="rounded avatar-lg"" src="{{(!empty($homeslide->home_slide))? url($homeslide->home_slide):url('upload/no_image.jpg') }}" alt="Slide Image" weight>
       </div>
   </div>
   <input class="btn btn-info waves-effect waves-light" type="submit" value="Update Home Slide">

@@ -72,12 +72,9 @@ class AboutController extends Controller
     
 
     }// End Method
-    public function EditAbout($id){
+      public function EditAbout($id){
         $aboutpage = About::findOrFail($id);
-        
         return view('admin.about_page.home_about_all',compact('aboutpage'));
-
-
 
     }// End Method  
 

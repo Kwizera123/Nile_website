@@ -40,8 +40,10 @@ Route::controller(HomeSliderController::class)->group(function(){
     Route::get('/allhome/slide','AllhomeSlide')->name('all.home.slide');
     Route::get('/addhome/slide','AddhomeSlide')->name('add.home.slide');
     Route::post('/store/home/slide','StoreHomeSlider')->name('store.home.slide');
-    Route::get('/home/slide','HomeSlide')->name('home.slide');
-    Route::post('/update/slider','UpdateSlider')->name('update.slider');
+
+    Route::get('/edit/slide/{id}','EditHomeSlide')->name('edit.home.slide'); 
+    Route::post('/update/slide','UpdateSlide')->name('update.slider');
+    Route::get('/delete/slide/{id}','DeleteHomeSlide')->name('delete.home.slide');
     
 });
 

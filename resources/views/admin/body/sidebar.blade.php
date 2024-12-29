@@ -41,7 +41,7 @@
                   </a>
                   <ul class="sub-menu" aria-expanded="false">
                     <li><a href="{{ route('all.home.slide') }}">Home Slide Data</a></li>
-                      <li><a href="{{ route('home.slide') }}">Home Slide Data</a></li>
+                      {{-- <li><a href="{{ route('edit.home.slide') }}">Home Slide Data</a></li> --}}
                       
                   </ul>
               </li>
