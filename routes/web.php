@@ -59,7 +59,7 @@ Route::controller(AboutController::class)->group(function(){
     Route::get('/about','HomeAbout')->name('home.about');
 });
 
-// Home Banner Controller  
+// Home Banner Controller 
 Route::controller(BannerController::class)->group(function(){
     Route::get('/all/banner','AllBanner')->name('all.banner');
     Route::get('/right/banner','RightBanner')->name('right.banner');
@@ -67,7 +67,9 @@ Route::controller(BannerController::class)->group(function(){
     Route::post('/store/left/banner','StoreLeftBanner')->name('store.left.banner');
     Route::get('/store/right/banner','AddRightBanner')->name('add.right.banner');
     Route::post('/store/right/banner','StoreRightBanner')->name('store.right.banner');
-    
+    Route::get('/left/banner/edit/{id}','EditLeftBenner')->name('left.banner.edit');
+    Route::post('/update/left/banner','UpdateLeftBanner')->name('update.left.banner');
+    Route::get('/delete/left/banner/{id}','DeleteLeftBanner')->name('delete.left.banner');
 });
 
 
