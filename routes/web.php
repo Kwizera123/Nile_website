@@ -6,6 +6,7 @@ use App\Http\Controllers\Admincontroller;
 use App\Http\Controllers\Home\HomeSliderController;
 use App\Http\Controllers\Home\AboutController;
 use App\Http\Controllers\Home\ProductController;
+use App\Http\Controllers\Home\BannerController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes 
@@ -56,6 +57,17 @@ Route::controller(AboutController::class)->group(function(){
     Route::post('/update/about','UpdateAbout')->name('update.about.page');
     Route::get('/delete/about/{id}','DeleteAbout')->name('delete.about');
     Route::get('/about','HomeAbout')->name('home.about');
+});
+
+// Home Banner Controller  
+Route::controller(BannerController::class)->group(function(){
+    Route::get('/all/banner','AllBanner')->name('all.banner');
+    Route::get('/right/banner','RightBanner')->name('right.banner');
+    Route::get('/add/left/banner','AddLeftBanner')->name('add.left.banner');
+    Route::post('/store/left/banner','StoreLeftBanner')->name('store.left.banner');
+    Route::get('/store/right/banner','AddRightBanner')->name('add.right.banner');
+    Route::post('/store/right/banner','StoreRightBanner')->name('store.right.banner');
+    
 });
 
 

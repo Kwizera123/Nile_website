@@ -19,7 +19,7 @@
                   <h6 class="mb-3">{{ $item->title }}</h6>
                   {{-- <h5 class="text-primary mb-0">$19.00</h5> --}}
                   <div class="btn-action d-flex justify-content-center">
-                      <a class="btn bg-primary py-2 px-3" href=""><i class="bi bi-cart text-white"></i></a>
+                      
                       <a class="btn bg-secondary py-2 px-3" href="{{ $item->link }}"><i class="bi bi-eye text-white"></i></a>
                   </div>
               </div>
