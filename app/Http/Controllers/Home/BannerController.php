@@ -178,4 +178,67 @@ class BannerController extends Controller
     
         return redirect()->back()->with($notification);
     }// End Method
+
+    public function EditRightBenner($id){
+        $rightbanner = right_banner::findOrFail($id);
+        return view('admin.banner.right_banner_edit',compact('rightbanner'));
+    }// End Method
+
+    public function UpdateRightBanner(Request $request){
+        $rightbanner_id = $request->id;
+
+        if($request->file('image_two')){
+            $manager = new ImageManager(new Driver());
+            $name_gen = hexdec(uniqid()).'.'.$request->file('image_two')->getClientOriginalExtension(); // 3453533.jpg
+            $img = $manager->read($request->file('image_two'));
+            $img = $img->resize(30,30);
+
+            $img->toJpeg(80)->save(base_path('public/upload/banner_image/'.$name_gen));
+            $save_url = 'upload/banner_image/'.$name_gen;
+
+            right_banner::findOrFail($rightbanner_id)->update([
+                'title_article_two' => $request->title_article_two,
+                'details_article_two' => $request->details_article_two,
+                'readmore_article_two' => $request->readmore_article_two,
+                'image_two' => $save_url,
+            ]);
+
+            $notification = array(
+                'message' => 'Right Banner With Image Updated Successfully',
+                'alert-type' => 'success'
+            );
+    
+            return redirect()->route('right.banner')->with($notification);
+
+       
+        }else{
+            right_banner::findOrFail($rightbanner_id)->update([
+                'title_article_two' => $request->title_article_two,
+                'details_article_two' => $request->details_article_two,
+                'readmore_article_two' => $request->readmore_article_two,
+                
+            ]);
+            $notification = array(
+                'message' => 'Right Banner Without Image Updated Successfully',
+                'alert-type' => 'info'
+            );
+    
+            return redirect()->route('right.banner')->with($notification);
+        }// End If Else
+    }// End Method
+
+    public function DeleteRightBanner($id){
+        $item = right_banner::findOrFail($id);
+        $img = $item->image_two;
+        unlink($img);
+
+        right_banner::findOrFail($id)->delete();
+
+        $notification = array(
+            'message' => 'Right Banner Details Deleted Successfully',
+            'alert-type' => 'error'
+        );
+    
+        return redirect()->back()->with($notification);
+    }// End Method
 }

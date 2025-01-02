@@ -38,8 +38,8 @@
                             <td>{{ $item->readmore_article_two }}</td>
                             <td><img src="{{ (!empty($item->image_two))? url($item->image_two):url('upload/no_image.jpg') }}" alt="Image" style="width:30px; height:30px"></td>
                             <td>
-                              <a href="" class="btn btn-warning px-3 radius-30">Edit</a>
-                              {{-- <a href="{{ route('delete.about',$item->id)}}" class="btn btn-danger px-3 radius-30" id="delete">Delete</a> --}}
+                              <a href="{{ route('edit.right.banner',$item->id)}}" class="btn btn-warning px-3 radius-30">Edit</a>
+                             <a href="{{ route('delete.right.banner',$item->id)}}" class="btn btn-danger px-3 radius-30" id="delete">Delete</a>
                             </td>
                         </tr>
                         @endforeach
