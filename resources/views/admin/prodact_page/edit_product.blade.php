@@ -31,7 +31,7 @@
   <div class="row mb-3">
     <label for="example-text-input" class="col-sm-2 col-form-label">Description</label>
     <div class="col-sm-10">
-        <textarea name="description" placeholder="Description" class="form-control" rows="5">{{$product->title}}</textarea>
+        <textarea name="description" placeholder="Description" class="form-control" rows="5">{{$product->description}}</textarea>
     </div>
 </div>
 <!-- end row -->

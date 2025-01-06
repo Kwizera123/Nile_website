@@ -38,7 +38,7 @@
                       
                       <tr>
                         <td width="5px;">{{ $key+1 }}</td>
-                        <td width="10px;">{{ $item->title_1 }}</td>
+                        <td>{{ $item->title_1 }}</td>
                         <td>{{ $item->number_1 }}</td>
                         <td>{{ $item->title_2 }}</td>
                         <td>{{ $item->number_2 }}</td>
@@ -47,7 +47,7 @@
                         <td>{{ $item->title_4 }}</td>
                        <td >{{ $item->number_4 }}</td>
                         <td>
-                          <a href="" class="btn btn-warning px-3 radius-30">Edit</a>
+                          <a href="{{ route('edit.statistic',$item->id)}}" class="btn btn-warning px-3 radius-30">Edit</a>
                           <a href="" class="btn btn-danger px-3 radius-30" id="delete">Delete</a>
                         </td>
                     </tr>

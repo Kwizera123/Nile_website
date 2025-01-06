@@ -36,4 +36,9 @@ class StatisticController extends Controller
     
         return redirect()->route('all.statistics')->with($notification);
     }// End Method
+
+    public function EditStatistic($id){
+        $editstatistic = Statistic::findOrFail($id);
+        return view('admin.statistics.edit_statistic',compact('editstatistic'));
+    }// End Method
 }
