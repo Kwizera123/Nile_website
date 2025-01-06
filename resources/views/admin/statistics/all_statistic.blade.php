@@ -47,8 +47,8 @@
                         <td>{{ $item->title_4 }}</td>
                        <td >{{ $item->number_4 }}</td>
                         <td>
-                          <a href="{{ route('edit.statistic',$item->id)}}" class="btn btn-warning px-3 radius-30">Edit</a>
-                          <a href="" class="btn btn-danger px-3 radius-30" id="delete">Delete</a>
+                          <a href="{{ route('edit.statistic',$item->id)}}" class="btn btn-warning px-3 radius-30"><i class='fas fa-pen-square' style='font-size:16px;'></i></a>
+                          <a href="{{ route('delete.statistic',$item->id)}}" class="btn btn-danger px-3 radius-30" id="delete"><i class='fas fa-trash' style='font-size:16px'></i></a>
                         </td>
                     </tr>
                         @endforeach

@@ -81,6 +81,8 @@ Route::controller(StatisticController::class)->group(function(){
     Route::get('/create/statistics','CreateStatistic')->name('create.statistic');
     Route::post('/store/statistics','StoreStatistic')->name('store.statistic');
     Route::get('/edit/statistics/{id}','EditStatistic')->name('edit.statistic');
+    Route::post('/update/statistics','UpdateStatistic')->name('update.statistic');
+    Route::get('/delete/statistics/{id}','DeleteStatistic')->name('delete.statistic');
 });// 
 
 

@@ -15,7 +15,7 @@
 
                   <h4 class="card-title">Edit Statistic</h4>
 
-                <Form id="myForm" method="post" action="{{ route('store.statistic') }}">
+                <Form id="myForm" method="post" action="{{ route('update.statistic') }}">
                   @csrf
 
                    <input type="hidden" name="id" value="{{ $editstatistic->id }}">
