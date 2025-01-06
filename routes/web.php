@@ -7,6 +7,7 @@ use App\Http\Controllers\Home\HomeSliderController;
 use App\Http\Controllers\Home\AboutController;
 use App\Http\Controllers\Home\ProductController;
 use App\Http\Controllers\Home\BannerController;
+use App\Http\Controllers\StatisticController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes 
@@ -73,6 +74,11 @@ Route::controller(BannerController::class)->group(function(){
     Route::get('/right/banner/edit/{id}','EditRightBenner')->name('edit.right.banner');
     Route::post('/update/Right/banner','UpdateRightBanner')->name('update.Right.banner');
     Route::get('/delete/right/banner/{id}','DeleteRightBanner')->name('delete.right.banner');
+});
+
+Route::controller(StatisticController::class)->group(function(){
+    Route::get('/all/statistics','AllStatistic')->name('all.statistics');
+    Route::get('/create/statistics','CreateStatistic')->name('create.statistic');
 });
 
 
