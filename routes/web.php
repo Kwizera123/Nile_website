@@ -79,7 +79,8 @@ Route::controller(BannerController::class)->group(function(){
 Route::controller(StatisticController::class)->group(function(){
     Route::get('/all/statistics','AllStatistic')->name('all.statistics');
     Route::get('/create/statistics','CreateStatistic')->name('create.statistic');
-});
+    Route::post('/store/statistics','StoreStatistic')->name('store.statistic');
+});// 
 
 
 

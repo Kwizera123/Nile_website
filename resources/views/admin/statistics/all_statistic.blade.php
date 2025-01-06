@@ -16,18 +16,19 @@
 
                 <table id="selection-datatable" class="table dt-responsive nowrap w-100">
                     <thead>
-                        <tr>
-                            <th>Sl</th>
-                            <th>Our Experience </th>
-                            <th>First Number </th>
-                            <th>Farm Specialist </th>
-                            <th>Second Number </th>
-                            <th>Complete Project </th>
-                            <th>Thirs Number </th>
-                            <th>Happy Clients </th>
-                            <th>Fourth Number </th>
-                            <th>Action</th>
-                        </tr>
+                      <tr>
+                        <th>Sl</th>
+                        <th>Our Experience</th>
+                        <th>Our Expe No</th>
+                        <th>Farm Specialist</th>
+                        <th>Farm Spec No</th>
+                        <th>Complete Project </th>
+                        <th>Complete Proj No </th>
+                        <th>Happy Clients </th>
+                        <th>Happy Clie No </th>
+
+                        <th>Action</th>
+                    </tr>
                     </thead>
                 
                 
@@ -35,22 +36,21 @@
                       @foreach ($allstatistic as $key=> $item)
                         
                       
-                        <tr>
-                            <td>{{ $key+1 }}</td>
-                            <td">{{ $item->title_1 }}</td>
-                            <td>{{ $item->number_1 }}</td>
-                            <td>{{ $item->title_2 }}</td>
-                            <td>{{ $item->number_2 }}</td>
-                            <td">{{ $item->title_3 }}</td>
-                            <td>{{ $item->number_3 }}</td>
-                            <td>{{ $item->title_4 }}</td>
-                            <td style="width:30px; height:30px">{{ $item->number_4 }}</td>
-                            
-                            <td>
-                              <a href="" class="btn btn-warning px-3 radius-30">Edit</a>
-                              {{-- <a href="{{ route('delete.left.banner',$item->id)}}" class="btn btn-danger px-3 radius-30" id="delete">Delete</a> --}}
-                            </td>
-                        </tr>
+                      <tr>
+                        <td width="5px;">{{ $key+1 }}</td>
+                        <td width="10px;">{{ $item->title_1 }}</td>
+                        <td>{{ $item->number_1 }}</td>
+                        <td>{{ $item->title_2 }}</td>
+                        <td>{{ $item->number_2 }}</td>
+                        <td>{{ $item->title_3 }}</td>
+                        <td>{{ $item->number_3 }}</td>
+                        <td>{{ $item->title_4 }}</td>
+                       <td >{{ $item->number_4 }}</td>
+                        <td>
+                          <a href="" class="btn btn-warning px-3 radius-30">Edit</a>
+                          <a href="" class="btn btn-danger px-3 radius-30" id="delete">Delete</a>
+                        </td>
+                    </tr>
                         @endforeach
 
                     </tbody>
