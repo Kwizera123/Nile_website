@@ -13,6 +13,20 @@ return new class extends Migration
     {
         Schema::create('services', function (Blueprint $table) {
             $table->id();
+            $table->string('title')->nullable();
+            $table->string('subtile')->nullable();
+            $table->text('details')->nullable();
+            $table->string('Contact_link')->nullable();
+            $table->string('Vegetable')->nullable();
+            $table->string('Vegetabler_d')->nullable();
+            $table->string('Fruit')->nullable();
+            $table->string('Fruit_d')->nullable();
+            $table->string('healty')->nullable();
+            $table->string('healty_d')->nullable();
+            $table->string('Modern')->nullable();
+            $table->string('Modern_d')->nullable();
+            $table->string('Farmang')->nullable();
+            $table->string('farming_d')->nullable();
             $table->timestamps();
         });
     }

@@ -23,18 +23,16 @@
                         <th>Subtile</th>
                         <th>Details </th>
                         <th>Contact link</th>
-                        <th>Article 1 </th>
-                        <th>Article 1 D</th>
                         <th>Vegetable </th>
-                        <th>Vegetable D</th>
+                        <th>Vege D</th>
                         <th>Fruit </th>
-                        <th>Fruit D </th>
+                        <th>Fru D </th>
                         <th>Healty </th>
-                        <th>health D </th>
+                        <th>hea D </th>
                         <th>Modern </th>
-                        <th>Modern D </th>
+                        <th>Mod D </th>
                         <th>Farmang </th>
-                        <th>farming D </th>
+                        <th>far D </th>
 
                         <th>Action</th>
                     </tr>
@@ -42,19 +40,25 @@
                 
                 
                     <tbody>
-                      @foreach ($allstatistic as $key=> $item)
+                      @foreach ($allservice as $key=> $item)
                         
                       
                       <tr>
                         <td width="5px;">{{ $key+1 }}</td>
-                        <td>{{ $item->title_1 }}</td>
-                        <td>{{ $item->number_1 }}</td>
-                        <td>{{ $item->title_2 }}</td>
-                        <td>{{ $item->number_2 }}</td>
-                        <td>{{ $item->title_3 }}</td>
-                        <td>{{ $item->number_3 }}</td>
-                        <td>{{ $item->title_4 }}</td>
-                       <td >{{ $item->number_4 }}</td>
+                        <td>{{ $item->title }}</td>
+                        <td>{{ $item->subtile }}</td>
+                        <td>{{ $item->details }}</td>
+                        <td>{{ $item->Contact_link }}</td>
+                        <td>{{ $item->Vegetable }}</td>
+                        <td>{{ $item->Vegetabler_d }}</td>
+                        <td>{{ $item->Fruit }}</td>
+                       <td >{{ $item->Fruit_d }}</td>
+                       <td >{{ $item->healty }}</td>
+                       <td >{{ $item->healty_d }}</td>
+                       <td >{{ $item->Modern }}</td>
+                       <td >{{ $item->Modern_d }}</td>
+                       <td >{{ $item->Farmang }}</td>
+                       <td >{{ $item->farming_d }}</td>
                         <td>
                           <a href="{{ route('edit.statistic',$item->id)}}" class="btn btn-warning px-3 radius-30"><i class='fas fa-pen-square' style='font-size:16px;'></i></a>
                           <a href="{{ route('delete.statistic',$item->id)}}" class="btn btn-danger px-3 radius-30" id="delete"><i class='fas fa-trash' style='font-size:16px'></i></a>
