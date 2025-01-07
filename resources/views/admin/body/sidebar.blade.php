@@ -100,6 +100,23 @@
                 </ul>
             </li>
 
+            <!-- services -->
+
+            <li>
+                <a href="javascript: void(0);" class="has-arrow waves-effect">
+                    <i class="ri-layout-3-line"></i>
+                    <span>Manage Services</span>
+                </a>
+                <ul class="sub-menu" aria-expanded="false">
+                    <li>
+                        <a href="{{ route('all.Services') }}">Services Data</a> 
+                        {{-- <a href="{{ route('right.banner') }}">Right Banner</a>  --}}
+                    </li>
+                </ul>
+            </li>
+
+
+
               <li class="menu-title">Pages</li>
 
               <li>

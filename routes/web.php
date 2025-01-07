@@ -8,6 +8,7 @@ use App\Http\Controllers\Home\AboutController;
 use App\Http\Controllers\Home\ProductController;
 use App\Http\Controllers\Home\BannerController;
 use App\Http\Controllers\StatisticController;
+use App\Http\Controllers\ServiceController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes 
@@ -83,6 +84,15 @@ Route::controller(StatisticController::class)->group(function(){
     Route::get('/edit/statistics/{id}','EditStatistic')->name('edit.statistic');
     Route::post('/update/statistics','UpdateStatistic')->name('update.statistic');
     Route::get('/delete/statistics/{id}','DeleteStatistic')->name('delete.statistic');
+});// 
+
+Route::controller(ServiceController::class)->group(function(){
+    Route::get('/all/services','AllServices')->name('all.Services');
+    // Route::get('/create/statistics','CreateStatistic')->name('create.statistic');
+    // Route::post('/store/statistics','StoreStatistic')->name('store.statistic');
+    // Route::get('/edit/statistics/{id}','EditStatistic')->name('edit.statistic');
+    // Route::post('/update/statistics','UpdateStatistic')->name('update.statistic');
+    // Route::get('/delete/statistics/{id}','DeleteStatistic')->name('delete.statistic');
 });// 
 
 
