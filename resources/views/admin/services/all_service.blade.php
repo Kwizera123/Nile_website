@@ -12,7 +12,7 @@
 
                 <h4 class="card-title">Home Services</h4>
                 <p class="card-title-desc">
-                   <a href="{{ route('create.statistic') }}" class="btn btn-outline-primary waves-effect waves-light">Create Statistic <span class="text text-danger">Only It doesn't exist</span> </a>
+                   {{-- <a href="{{ route('create.statistic') }}" class="btn btn-outline-primary waves-effect waves-light">Create Services <span class="text text-danger">Only It doesn't exist</span> </a> --}}
                 </p>
 
                 <table id="selection-datatable" class="table dt-responsive nowrap w-100">
@@ -61,7 +61,7 @@
                        <td >{{ $item->farming_d }}</td>
                         <td>
                           <a href="{{ route('edit.service',$item->id)}}" class="btn btn-warning px-3 radius-30"><i class='fas fa-pen-square' style='font-size:16px;'></i></a>
-                          <a href="{{ route('delete.statistic',$item->id)}}" class="btn btn-danger px-3 radius-30" id="delete"><i class='fas fa-trash' style='font-size:16px'></i></a>
+                          <a href="{{ route('delete.service',$item->id)}}" class="btn btn-danger px-3 radius-30" id="delete"><i class='fas fa-trash' style='font-size:16px'></i></a>
                         </td>
                     </tr>
                         @endforeach

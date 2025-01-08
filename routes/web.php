@@ -92,7 +92,7 @@ Route::controller(ServiceController::class)->group(function(){
     // Route::post('/store/statistics','StoreStatistic')->name('store.statistic');
      Route::get('/edit/service/{id}','EditService')->name('edit.service');
      Route::post('/update/service','UpdateService')->name('update.service');
-    // Route::get('/delete/statistics/{id}','DeleteStatistic')->name('delete.statistic');
+     Route::get('/delete/service/{id}','DeleteService')->name('delete.service');
 });// 
 
 
