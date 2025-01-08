@@ -90,8 +90,8 @@ Route::controller(ServiceController::class)->group(function(){
     Route::get('/all/services','AllServices')->name('all.Services');
     // Route::get('/create/statistics','CreateStatistic')->name('create.statistic');
     // Route::post('/store/statistics','StoreStatistic')->name('store.statistic');
-    // Route::get('/edit/statistics/{id}','EditStatistic')->name('edit.statistic');
-    // Route::post('/update/statistics','UpdateStatistic')->name('update.statistic');
+     Route::get('/edit/service/{id}','EditService')->name('edit.service');
+     Route::post('/update/service','UpdateService')->name('update.service');
     // Route::get('/delete/statistics/{id}','DeleteStatistic')->name('delete.statistic');
 });// 
 
