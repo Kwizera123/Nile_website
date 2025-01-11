@@ -102,7 +102,7 @@ Route::controller(FeaturesController::class)->group(function(){
      Route::post('/store/features','StoreFeature')->name('store.home.feature');
      Route::get('/edit/features/{id}','EditFeature')->name('edit.home.feature');
      Route::post('/update/features','UpdateFeature')->name('update.home.feature');
-    //  Route::get('/delete/service/{id}','DeleteService')->name('delete.service');
+     Route::get('/delete/feature/{id}','DeleteFeature')->name('delete.home.feature');
 });// 
 
 

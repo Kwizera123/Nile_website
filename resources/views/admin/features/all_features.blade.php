@@ -40,7 +40,7 @@
                             <td><img src="{{ asset($item->image) }}" alt="Image" style="width:30px; height:30px"></td>
                             <td>
                               <a href="{{ route('edit.home.feature',$item->id)}}" class="btn btn-warning px-3 radius-30">Edit</a>
-                              <a href="{{ route('delete.home.slide',$item->id)}}" class="btn btn-danger px-3 radius-30" id="delete">Delete</a>
+                              <a href="{{ route('delete.home.feature',$item->id)}}" class="btn btn-danger px-3 radius-30" id="delete">Delete</a>
                             </td>
                         </tr>
                         @endforeach

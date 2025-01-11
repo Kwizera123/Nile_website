@@ -24,7 +24,7 @@
                   <div class="row mb-3">
                       <label for="example-text-input" class="col-sm-2 col-form-label">Feature</label>
                       <div class="form-group col-sm-10">
-                          <input name="features" class="form-control" id="features" type="text" {{ $feature->features }} placeholder="Feature" id="title-text-input">
+                          <input name="features" class="form-control" id="features" type="text" value="{{ $feature->features }}" placeholder="Feature" id="title-text-input">
                       </div>
                   </div>
 <!-- end row -->
@@ -33,7 +33,7 @@
     <div class="row mb-3">
       <label for="example-text-input" class="col-sm-2 col-form-label">Why choose us</label>
       <div class="form-group col-sm-10">
-          <input name="whychooseus" class="form-control" id="whychooseus" type="text" {{ $feature->whychooseus }} placeholder="Why choose us" id="example-text-input">
+          <input name="whychooseus" class="form-control" id="whychooseus" type="text" value="{{ $feature->whychooseus }}" placeholder="Why choose us" id="example-text-input">
       </div>
   </div>
     <!-- end row -->
@@ -90,9 +90,7 @@
               descreption: {
                   required : true,
               }, 
-              image: {
-                  required : true,
-              }, 
+               
               
           },
           messages :{
@@ -105,9 +103,7 @@
               descreption: {
                   required : 'Please Enter feature descreption',
               },
-              image: {
-                  required : 'Please Select Feature Image',
-              },
+              
                
 
           },
