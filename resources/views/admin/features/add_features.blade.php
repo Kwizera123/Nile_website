@@ -16,7 +16,7 @@
 
                   <h4 class="card-title">New Home Feature</h4>
 
-                <Form id="myForm" method="post" action="{{ route('store.home.slide') }}" enctype="multipart/form-data">
+                <Form id="myForm" method="post" action="{{ route('store.home.feature') }}" enctype="multipart/form-data">
                   @csrf
 
                   {{-- <input type="hidden" name="id" value=""> --}}
@@ -92,10 +92,10 @@
               whychooseus: {
                   required : true,
               }, 
-              explore: {
+              descreption: {
                   required : true,
               }, 
-              home_slide: {
+              image: {
                   required : true,
               }, 
               
@@ -107,11 +107,11 @@
               whychooseus: {
                   required : 'Please Just type Why choose us',
               }, 
-              explore: {
-                  required : 'Please Enter Slide Details Url',
+              descreption: {
+                  required : 'Please Enter feature descreption',
               },
-              home_slide: {
-                  required : 'Please Select Slide Image',
+              image: {
+                  required : 'Please Select Feature Image',
               },
                
 

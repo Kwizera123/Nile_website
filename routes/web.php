@@ -99,7 +99,7 @@ Route::controller(ServiceController::class)->group(function(){
 Route::controller(FeaturesController::class)->group(function(){
     Route::get('/all/features','AllFeatures')->name('all.features');
      Route::get('/create/features','CreateFeature')->name('add.home.feature');
-    // Route::post('/store/statistics','StoreStatistic')->name('store.statistic');
+     Route::post('/store/features','StoreFeature')->name('store.home.feature');
     //  Route::get('/edit/service/{id}','EditService')->name('edit.service');
     //  Route::post('/update/service','UpdateService')->name('update.service');
     //  Route::get('/delete/service/{id}','DeleteService')->name('delete.service');
