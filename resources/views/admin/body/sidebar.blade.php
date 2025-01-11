@@ -115,6 +115,21 @@
                 </ul>
             </li>
 
+             <!-- Features -->
+
+             <li>
+                <a href="javascript: void(0);" class="has-arrow waves-effect">
+                    <i class="ri-layout-3-line"></i>
+                    <span>Manage Features</span>
+                </a>
+                <ul class="sub-menu" aria-expanded="false">
+                    <li>
+                        <a href="{{ route('all.features') }}">Features Data</a> 
+                        {{-- <a href="{{ route('right.banner') }}">Right Banner</a>  --}}
+                    </li>
+                </ul>
+            </li>
+
 
 
               <li class="menu-title">Pages</li>
