@@ -60,4 +60,54 @@ class FeaturesController extends Controller
 }
     return redirect()->route('all.features')->with($notification);
     }// End Method
+
+    public function EditFeature($id){
+        $feature = Feature::findOrFail($id);
+        return view('admin.features.edit_features',compact('feature'));
+    }// End Method
+
+    public function UpdateFeature(Request $request){
+        $feature_id = $request->id;
+
+        if($request->file('image')){
+        
+            $image = $request->file('image');
+            $manager = new ImageManager(new Driver());
+            $name_gen = hexdec(uniqid()).'.'.$request->file('image')->getClientOriginalExtension();
+            $img = $manager->read($request->file('image'));
+            $img = $img->resize(600,348);
+      
+            $img->toJpeg(80)->save(base_path('public/upload/feature_image/'.$name_gen));
+            $save_url = 'upload/feature_image/'.$name_gen;
+
+            Feature::findOrFail($feature_id)->update([
+            'features' => $request->features,
+            'whychooseus' => $request->whychooseus,
+            'descreption' => $request->descreption,
+            'image' => $save_url,
+            ]);
+
+            $notification = array(
+                'message' => 'Feature Data Updated With Image Successfully',
+                'alert-type' => 'success'
+            );
+    
+            return redirect()->route('all.features')->with($notification);
+
+       
+        }else{
+            Feature::findOrFail($feature_id)->update([
+                'features' => $request->features,
+                'whychooseus' => $request->whychooseus,
+                'descreption' => $request->descreption,
+                
+            ]);
+            $notification = array(
+                'message' => 'Feature Data Updated Without Image Successfully',
+                'alert-type' => 'info'
+            );
+    
+            return redirect()->route('all.features')->with($notification);
+        }// End If Else
+    }// End Method
 }
